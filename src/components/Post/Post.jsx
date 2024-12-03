@@ -1,14 +1,15 @@
 import styles from "./Post.module.css";
 
-const { post, header, avatar, author, authorInfo, content } = styles;
-
 export function Post() {
   return (
-    <article className={post}>
-      <header className={header}>
-        <div className={author} >
-          <img src="https://github.com/lucylima.png" className={avatar} />
-          <div className={authorInfo}>
+    <article className={styles.post}>
+      <header className={styles.header}>
+        <div className={styles.author}>
+          <img
+            src="https://github.com/lucylima.png"
+            className={styles.avatar}
+          />
+          <div className={styles.authorInfo}>
             <strong>Lucy Lima</strong>
             <span>Web developer</span>
           </div>
@@ -17,7 +18,7 @@ export function Post() {
           Publicado há 1h
         </time>
       </header>
-      <div className={content}>
+      <div className={styles.content}>
         <p> Fala galeraa 👋</p>
         <p>
           Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
@@ -27,11 +28,20 @@ export function Post() {
           👉 <a href="#">jane.design/doctorcare</a>
         </p>
         <p>
-          <a href="#">#novoprojeto</a>{' '}
-          <a href="#">#nlw</a>{" "}
+          <a href="#">#novoprojeto</a> <a href="#">#nlw</a>{" "}
           <a href="#">#rocketseat</a>{" "}
         </p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixe seu feedback!</strong>
+
+        <textarea placeholder="Deixe um comentário..." />
+
+        <footer>
+          <button type="submit">Comentar</button>
+        </footer>
+      </form>
     </article>
   );
 }
